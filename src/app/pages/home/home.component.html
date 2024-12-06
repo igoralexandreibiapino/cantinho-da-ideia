@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Gerenciador de Postagens</h1>
+    <a routerLink="/post-form" class="btn btn-primary">Nova Postagem</a>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Corpo</th>
+          <th>UserID</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ post.id }}</td>
+          <td>{{ post.title }}</td>
+          <td>{{ post.body }}</td>
+          <td>{{ post.userId }}</td>
+          <td>
+            <a
+              class="btn btn-warning"
+              routerLink="['/post/edit', post.id]"
+            >
+              Editar
+          </a>
+            <button (click)="deletePost(post.id)" class="btn btn-danger">
+              Excluir
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
